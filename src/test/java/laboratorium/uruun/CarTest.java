@@ -46,6 +46,8 @@ public class CarTest {
         assertFalse(myFerrari.needsFuel());
     }
 
+    // Zad 1
+
     @Test
     public void testDefaultGetEngineTemperature() {
         when(myFerrari.getEngineTemperature()).thenReturn(20.0);
