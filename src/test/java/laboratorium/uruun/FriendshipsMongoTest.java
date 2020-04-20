@@ -80,4 +80,10 @@ public class FriendshipsMongoTest {
         when(karol.getName()).thenReturn("Karol");
         assertThat(karol.getName()).isEqualTo("Karol");
     }
+
+    @Test public void testMakeFriends(){
+        friendships.makeFriends("Karol", "Dawid");
+        friendships.makeFriends("Karol", "Monika");
+        verify(friends, times(4)).save(any(Person.class));
+    }
 }
