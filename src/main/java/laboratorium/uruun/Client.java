@@ -9,4 +9,6 @@ public class Client {
     public String getEmail() {
         return this.email;
     }
+
+    public void receive(Message message) {};
 }
