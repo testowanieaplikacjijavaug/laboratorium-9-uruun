@@ -24,3 +24,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Coverage
+      env:
+        CODECOV_TOKEN: 162fd3a7-a281-4650-9700-a6152cbb5f56 
+      run: bash <(curl -s https://codecov.io/bash)
