@@ -42,10 +42,13 @@ test {
     useJUnitPlatform()
 }
 
-jacocoTestReport {
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
     reports {
-        xml.enabled = true
-        html.enabled = false
-        xml.destination = file("$buildDir")
+        xml.enabled true
+        xml.destination "${buildDir}/reports/jacoco/report.xml"
+        html.enabled false
+        csv.enabled false
     }
 }
